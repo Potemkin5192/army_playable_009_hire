@@ -2895,6 +2895,7 @@ p.nominalBounds = new cjs.Rectangle(-1500,-1500,3000,3000);
 		var icantSFX = new Audio('icant.mp3');
 		musicBG.loop = true;
 		musicBG.canBePlayed = false;
+		cashSFX.volume = 0.2;
 		var main = this.game;
 		var solid = main.solid;
 		var text = main.ui.text;
@@ -3017,6 +3018,7 @@ p.nominalBounds = new cjs.Rectangle(-1500,-1500,3000,3000);
 		});
 		window.addEventListener('failFX', function () {
 			failSFX.play();
+			musicBG.pause();
 		});
 		window.addEventListener('cash', function () {
 			cashSFX.play();
@@ -3080,6 +3082,7 @@ p.nominalBounds = new cjs.Rectangle(-1500,-1500,3000,3000);
 				btnSFX.volume = 0;
 				cashSFX.volume = 0;
 				failSFX.volume = 0;
+				icantSFX.volume = 0;
 			} else if (musicBG.canBePlayed) {
 				musicBG.volume = 1;
 				swooshSFX.volume = 1;
@@ -3088,8 +3091,9 @@ p.nominalBounds = new cjs.Rectangle(-1500,-1500,3000,3000);
 				hospitalAmbience.volume = 1;
 				poofSFX.volume = 1;
 				btnSFX.volume = 1;
-				cashSFX.volume = 1;
+				cashSFX.volume = 0.2;
 				failSFX.volume = 1;
+				icantSFX.volume = 1;
 			}
 		}
 	}
